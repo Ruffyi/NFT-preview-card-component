@@ -1,0 +1,25 @@
+:root {
+	box-sizing: border-box;
+	font-family: $ff-primary;
+	font-size: $fs-primary;
+	font-weight: 400;
+}
+
+body {
+	@include flex-mother();
+	min-height: 100vh;
+	background-color: map-get($clr, 'clr-neutral-main-bg');
+}
+
+.img {
+	display: block;
+	width: 100%;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}

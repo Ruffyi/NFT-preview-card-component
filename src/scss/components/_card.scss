@@ -1,0 +1,83 @@
+.card {
+	width: 30rem;
+	background-color: map-get($clr, 'clr-neutral-card-bg');
+	padding: 0 2rem;
+	&__image {
+		position: relative;
+		padding: 2rem 0;
+		& > .img {
+			border-radius: 1rem;
+		}
+		&:hover .card__overlay {
+			cursor: pointer;
+			z-index: 1;
+		}
+	}
+	&__overlay {
+		@include positioning(absolute, 0, 0);
+		@include flex-mother();
+		width: 100%;
+		height: calc(100% - 4rem);
+		margin-top: 2rem;
+		border-radius: 1rem;
+		background-color: map-get($clr, 'clr-primary-cyan-alpha');
+		z-index: -1;
+	}
+	&__title {
+		margin: 2rem 0;
+		font-size: 2rem;
+		color: map-get($clr, 'clr-neutral-text');
+		transition: 0.3s;
+		&:hover {
+			color: map-get($clr, 'clr-primary-cyan');
+			cursor: pointer;
+		}
+	}
+	&__description {
+		font-size: 1.5rem;
+		color: map-get($clr, 'clr-primary-blue');
+	}
+	&__specification {
+		@include flex-mother(row, center, space-between);
+		& > p {
+			@include flex-mother();
+			margin-top: 2rem;
+			font-size: 1.2rem;
+		}
+		& .img {
+			width: 15px;
+			height: 15px;
+		}
+	}
+	&__value {
+		color: map-get($clr, 'clr-primary-cyan');
+	}
+	&__days {
+		color: map-get($clr, 'clr-primary-blue');
+	}
+	&__user {
+		margin: 2rem 0;
+		padding-top: 2rem;
+		border-top: 1px solid map-get($clr, 'clr-neutral-line');
+		@include flex-mother(row, center, flex-start);
+		&-img {
+			width: 30px;
+			height: 30px;
+			border: 1px solid map-get($clr, 'clr-neutral-text');
+			border-radius: 50%;
+		}
+	}
+	&__author {
+		margin-left: 2rem;
+		font-size: 1.3rem;
+		color: map-get($clr, 'clr-primary-blue');
+		.author {
+			color: map-get($clr, 'clr-neutral-text');
+			transition: 0.3s;
+			&:hover {
+				color: map-get($clr, 'clr-primary-cyan');
+				cursor: pointer;
+			}
+		}
+	}
+}
